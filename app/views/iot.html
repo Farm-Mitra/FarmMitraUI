@@ -9,7 +9,11 @@
 		
 
         
-	<div  ng-controller="FarmsCtrl">
-        <div kendo-treemap k-options="options" style="height: 600px; font-size: 12px;"></div>
-      </div>
+	 <pvtl-d3-treemap width="800" height="600" data="farmDetails" value="fc">
+            <div>
+                <div ng-if="!children">
+                    <span class="id">{{fc}}</span>
+                </div>
+            </div>
+        </pvtl-d3-treemap>	
 </div>

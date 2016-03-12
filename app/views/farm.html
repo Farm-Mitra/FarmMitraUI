@@ -1,17 +1,15 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Farmers</h1>
+			<h1 class="page-header">Farm Details</h1>
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>
     <div class="row">
 		
 
-        
-        
  
-<div ng-controller="farmerCntrl">
+<div ng-controller="farmCntrl">
 	<!--label>Search: <input ng-model="searchText"></label-->
 	<div class="input-group custom-search-form">
         <input ng-model="searchText" type="text" class="form-control" placeholder="Search...">
@@ -21,12 +19,11 @@
             </button>
         </span>
     </div>
-	
-	
+
 	<!-- /.row -->
 	<div class="row">
 	<br />
-	<div class="col-lg-3" ng-repeat="village in farmers | filter:searchText">
+	<div class="col-lg-3" ng-repeat="village in farms | filter:searchText">
 		<a href="javascript:void(0)" data-toggle="modal" data-target="#villagemodal{{village.id}}">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -35,8 +32,10 @@
 						<i class="fa fa-leaf fa-2x"></i>
 					</div>
 					<div class="col-xs-9">
-						<h4>{{village.farmerName}}</h4>
-						<h5>{{village.farmerAddress}}</h5>
+						<h4>{{village.id}}</h4>
+                        <h4>{{village.farmerName}}</h4>
+                        <h4>{{village.farmVillageName}}</h4>
+						
 					</div>
 				</div>
 			</div>
@@ -49,7 +48,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="myModalLabel">{{village.farmerName}}</h4>
+						<h4 class="modal-title" id="myModalLabel">{{village.id}} - {{village.farmerName}}</h4>
 					</div>
 					<div class="modal-body">
 						<!-- /.panel-heading -->
@@ -58,18 +57,26 @@
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <td><Strong>Name:</strong></td>
-                                <td>{{village.farmerName}}</td>
+                                <td><Strong>Field ID:</strong></td>
+                                <td>{{village.id}}</td>
                             </tr>
-                           
                             <tr>
-                                <td><Strong>Location:</strong></td>
-                                <td>{{village.farmerAddress}}</td>
+                                <td><Strong>Field Capacity:</strong></td>
+                                <td>{{village.fc}}</td>
+                            </tr>
+                            <tr>
+                                <td><Strong>Lattitude:</strong></td>
+                                <td>{{village.lattitude}}</td>
                             </tr>
                              <tr>
-                                <td><Strong>Contact:</strong></td>
-                                <td>{{village.contactNno}}</td>
+                                <td><Strong>Longitude:</strong></td>
+                                <td>{{village.longitude}}</td>
                             </tr>
+                             <tr>
+                                <td><Strong>Area:</strong></td>
+                                <td>{{village.area}} - {{village.farmVillageName}}</td>
+                            </tr>
+                           
                         </tbody>
                     </table>
                 </div>

@@ -196,47 +196,31 @@ angular
     })
      
     .state('dashboard.farms',{
-        templateUrl:'views/pages/farms.html',
+        templateUrl:'views/farm.html',
         url:'/farms'
     })
    
      .state('dashboard.devices',{
-        templateUrl:'views/table.html',
-        url:'/bladevicesnk'
+        templateUrl:'views/devices.html',
+        url:'/devices'
     })
-     .state('dashboard.watersource',{
-        templateUrl:'views/pages/watersource.html',
-        url:'/watersource'
+     .state('dashboard.waterAvailable',{
+        templateUrl:'views/waterCount.html',
+        url:'/waterAvailable'
     })
     
     
 
   }])
 
-    .controller('FarmsCtrl',function($scope){
-          $scope.options = {
-              dataSource: {
-                  transport: {
-                      read: {
-                          url: "../content/dataviz/js/population-usa.json",
-                          dataType: "json"
-                      }
-                  },
-                  schema: {
-                      model: {
-                          children: "items"
-                      }
-                  }
-              },
-              valueField: "value",
-              textField: "name",
-              colors: [
-                  ["#0c81c5", "#c5dceb"], ["#3aa2de", "#d8ecf8"],
-                  ["#449000", "#dae9cc"], ["#76b800", "#dae7c3"],
-                  ["#ffae00", "#f5e5c3"], ["#ef4c00", "#f1b092"],
-                  ["#9e0a61", "#eccedf"]
-              ]
-          };
+    .controller('FarmsCtrl',function($scope,demoFac){
+          demoFac.fetchfarmforFVDetails().success(function(data){
+              console.log(data);
+              $scope.farmDetails = {
+                    'name':'farmvillage',
+                    children : data
+              }
+          })
       });
 
     

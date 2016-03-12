@@ -1,17 +1,17 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-lg-12">
-			<h1 class="page-header">Farmers</h1>
+			<h1 class="page-header">Mitra - Device Details</h1>
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>
     <div class="row">
 		
 
-        
+
         
  
-<div ng-controller="farmerCntrl">
+<div ng-controller="deviceCntrl">
 	<!--label>Search: <input ng-model="searchText"></label-->
 	<div class="input-group custom-search-form">
         <input ng-model="searchText" type="text" class="form-control" placeholder="Search...">
@@ -22,11 +22,10 @@
         </span>
     </div>
 	
-	
 	<!-- /.row -->
 	<div class="row">
 	<br />
-	<div class="col-lg-3" ng-repeat="village in farmers | filter:searchText">
+	<div class="col-lg-3" ng-repeat="village in devices | filter:searchText">
 		<a href="javascript:void(0)" data-toggle="modal" data-target="#villagemodal{{village.id}}">
 		<div class="panel panel-primary">
 			<div class="panel-heading">
@@ -35,8 +34,8 @@
 						<i class="fa fa-leaf fa-2x"></i>
 					</div>
 					<div class="col-xs-9">
-						<h4>{{village.farmerName}}</h4>
-						<h5>{{village.farmerAddress}}</h5>
+						<h4>{{village.deviceName}}</h4>
+						<h5>{{village.deviceMake}}</h5>
 					</div>
 				</div>
 			</div>
@@ -49,7 +48,7 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="myModalLabel">{{village.farmerName}}</h4>
+						<h4 class="modal-title" id="myModalLabel">{{village.deviceName}}</h4>
 					</div>
 					<div class="modal-body">
 						<!-- /.panel-heading -->
@@ -58,17 +57,16 @@
                     <table class="table table-striped">
                         <tbody>
                             <tr>
-                                <td><Strong>Name:</strong></td>
-                                <td>{{village.farmerName}}</td>
+                                <td><Strong>Device ID:</Strong></td>
+                                <td>{{village.id}}</td>
                             </tr>
-                           
                             <tr>
-                                <td><Strong>Location:</strong></td>
-                                <td>{{village.farmerAddress}}</td>
+                                <td><Strong>Device Name:</Strong></td>
+                                <td>{{village.deviceName}}</td>
                             </tr>
-                             <tr>
-                                <td><Strong>Contact:</strong></td>
-                                <td>{{village.contactNno}}</td>
+                            <tr>
+                                <td><Strong>Device Make:</Strong></td>
+                                <td>{{village.deviceMake}}</td>
                             </tr>
                         </tbody>
                     </table>
