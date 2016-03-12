@@ -1,8 +1,10 @@
 <div ng-controller="waterCntrl">
 <div class="container-fluid">
+    <div id="va">{{waterCount}}</div>
             <svg id="fillgauge1" width="120%" height="250"></svg>
                                             <script language="JavaScript">
-                                                var gauge1 = loadLiquidFillGauge("fillgauge1",5645);
+                                                var val = $('#va').val();
+                                                var gauge1 = loadLiquidFillGauge("fillgauge1",val);
                                                 var config1 = liquidFillGaugeDefaultSettings();
                                                 config1.circleColor = "#FF7777";
                                                 config1.textColor = "#FF4444";
