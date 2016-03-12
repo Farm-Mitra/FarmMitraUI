@@ -9,10 +9,10 @@
 		
 
         
-	 <pvtl-d3-treemap width="800" height="600" data="farmDetails" value="fc">
+	 <pvtl-d3-treemap width="800" height="600" data="farmDetails" value="farmArea" ng-class="farmArea">
             <div>
                 <div ng-if="!children">
-                    <span class="id">{{fc}}</span>
+                    <span ng-class="farmArea" class="area">{{farmArea*100}}</span>
                 </div>
             </div>
         </pvtl-d3-treemap>	
