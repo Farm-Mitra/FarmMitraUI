@@ -170,13 +170,16 @@ angular
         url:'/farmers'
     })
      .state('dashboard.devices',{
-        templateUrl:'views/pages/devices.html',
+        templateUrl:'views/table.html',
         url:'/bladevicesnk'
     })
      .state('dashboard.watersource',{
         templateUrl:'views/pages/watersource.html',
         url:'/watersource'
     })
+    
+    
+
   }]);
 
     
