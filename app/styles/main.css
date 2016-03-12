@@ -90,3 +90,101 @@ background-color: #eee;
 .panel, .panel-heading {
     border-radius: 0;
 }
+
+/* circlr */
+
+.row{}
+.circle{
+  background: #ffffff;
+  padding: 35px;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  border: 20px solid #F2F2F2;
+    margin-top:10px;
+    
+    transition: all 0.5s;
+  -moz-transition: all 0.5s; /* Firefox 4 */
+  -webkit-transition: all 0.5s; /* Safari and Chrome */
+  -o-transition: all 0.5s; /* Opera */
+ 
+}
+
+.c6{
+  background: #F2F2F2 !important;  
+}
+.c7{
+  background: #F2F2F2 !important;  
+}
+
+.c8{
+  background: #F2F2F2 !important;  
+}
+.circle h4{
+  margin: 0;
+  padding: 0;
+}
+.circle p{}
+.circle span{}
+.circle span.icon{
+}
+.circle span.icon i{
+  font-size: 48px;
+}
+.circle span.price-large{
+  font-size: 68px
+}
+.price-small{
+  font-size: 24px 
+}
+
+.c1:hover{
+  background: #39b3d7;
+  color: #ffffff;
+}
+.c1 .blue{
+  color: #39b3d7;
+}
+.c1:hover .blue{
+  color: #ffffff;
+    text-decoration: none !important;
+}
+
+.c2:hover{
+  background: #ed9c28;
+  color: #ffffff;
+}
+.c2 {
+  color: #ed9c28;
+}
+.c2:hover .yellow{
+  color: #ffffff;
+}
+
+.c3:hover{
+  background: #47a447;
+  color: #ffffff;
+}
+.c3 {
+  color: #47a447;
+}
+.c3:hover .green{
+  color: #ffffff;
+}
+
+.c4:hover{
+  background: #d2322d;
+  color: #ffffff;
+}
+.c5 {
+  color: #2E2EFE;
+}
+.c5:hover{
+    background: #2E2EFE;
+  color: #ffffff;
+}
+
+.margin-top-10 {
+    margin-top:10px;
+}
+
