@@ -101,6 +101,8 @@ angular
         templateUrl:'views/pages/blank.html',
         url:'/blank'
     })
+    
+    
       .state('login',{
         templateUrl:'views/pages/login.html',
         url:'/login'
@@ -153,6 +155,28 @@ angular
        templateUrl:'views/ui-elements/grid.html',
        url:'/grid'
    })
+    
+     .state('dashboard.farmvillages',{
+        templateUrl:'views/pages/farmvillages.html',
+        url:'/farmvillages'
+    })
+    
+    .state('dashboard.farms',{
+        templateUrl:'views/pages/farms.html',
+        url:'/farms'
+    })
+    .state('dashboard.farmers',{
+        templateUrl:'views/pages/farmers.html',
+        url:'/farmers'
+    })
+     .state('dashboard.devices',{
+        templateUrl:'views/pages/devices.html',
+        url:'/bladevicesnk'
+    })
+     .state('dashboard.watersource',{
+        templateUrl:'views/pages/watersource.html',
+        url:'/watersource'
+    })
   }]);
 
     

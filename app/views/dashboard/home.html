@@ -8,42 +8,56 @@
     <!-- /.row -->
     <div class="row">
         
-        <stats number="6" comments="New comments!" colour="primary" type="comments"></stats>
-        <stats number="12" comments="New tasks!" colour="primary" type="user"></stats>
-        <stats number="18" comments="New orders!" colour="yellow" type="shopping-cart"></stats>
-        <stats number="24" comments="Support tickets!" colour="red" type="support"></stats>
-
+        <stats number="6" comments="Farm Villages" colour="green" type="location-arrow" goto="dashboard.farmvillages"></stats>
+        <stats number="12" comments="Farmers" colour="green" type="user" goto="dashboard.farmers"></stats>
+        <stats number="18" comments="Farm" colour="green" type="leaf" goto="dashboard.farms"></stats>
+        <stats number="8" comments="Mitra" colour="green" type="support" goto="dashboard.devices"></stats>
+       
+   
+       
+        <!--stats number="8" comments="Water Available" colour="green" type="support"></stats-->
+        <div class="col-lg-3 col-md-6">
+                <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                
+                                <div class="col-xs-3">
+                                    <i class="fa fa-support fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div class="huge">110</div>
+                                    <div>Water Available</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a data-toggle="modal" data-target="#myModal">
+                            <div class="panel-footer">
+                                <span class="pull-left">View Details</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                </div>
+        </div>
+        
+        
+        
+        
+        
+        
+        <stats number="8" comments="Projected Water Use" colour="green" type="support" goto="dashboard.watersource"></stats>
+        <stats number="8" comments="Projected Water Saved" colour="green" type="support"></stats>
+        <stats number="8" comments="Projected Profit" colour="green" type="support"></stats>
+        
     </div>
     
-    <!-- /.panel -->
-    <div class="row">
-        <div class="col-lg-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-clock-o fa-fw"></i> Responsive Timeline
-                </div>
-                <!-- /.panel-heading -->
-                <timeline></timeline>
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-        </div>
-        <!-- /.col-lg-8 -->
-        <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-bell fa-fw"></i> Notifications Panel
-                </div>
-                <!-- /.panel-heading -->
-                <notifications></notifications> 
-                <!-- /.panel-body -->
-            </div>
-            <!-- /.panel -->
-
-            <chat></chat>
-             <!-- /.panel .chat-panel -->
-        </div>
-        <!-- /.col-lg-4 -->
-    </div>
+     <!-- Button trigger modal -->
+                            <!--button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                                Launch Demo Modal
+                            </button-->
+                            <!-- Modal -->
+                            
+    
+    
     <!-- /.row -->
 </div>
