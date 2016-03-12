@@ -19,4 +19,4 @@ angular.module('sbAdminApp')
         $scope.selectedMenu = 'home';
       }
     }
-  });
+  }); 

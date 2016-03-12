@@ -21,7 +21,7 @@ angular.module('sbAdminApp')
         'details':'@',
         'type':'@',
         'goto':'@'
-  		}
+  		} 
   		
   	}
   });

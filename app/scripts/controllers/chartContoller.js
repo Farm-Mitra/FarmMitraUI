@@ -18,7 +18,7 @@ angular.module('sbAdminApp')
 	    onClick: function (points, evt) {
 	      console.log(points, evt);
 	    }
-    };
+    }; 
 
     $scope.bar = {
 	    labels: ['2006', '2007', '2008', '2009', '2010', '2011', '2012'],

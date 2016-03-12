@@ -169,7 +169,7 @@ angular
         templateUrl:'views/farmers.html',
         url:'/farmers'
     })
-    
+     
     .state('dashboard.farms',{
         templateUrl:'views/pages/farms.html',
         url:'/farms'
