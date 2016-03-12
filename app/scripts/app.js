@@ -12,7 +12,7 @@ angular
     'oc.lazyLoad',
     'ui.router',
     'ui.bootstrap',
-    'angular-loading-bar',
+    'angular-loading-bar','pvtlD3Treemap'
   ])
   .config(['$stateProvider','$urlRouterProvider','$ocLazyLoadProvider',function ($stateProvider,$urlRouterProvider,$ocLazyLoadProvider) {
     
@@ -119,6 +119,7 @@ angular
     })
 	.state('dashboard.iot',{
         templateUrl:'views/iot.html',
+        controller: 'FarmsCtrl',
         url:'/iot/:id'
     })
       .state('dashboard.form',{
@@ -210,6 +211,32 @@ angular
     
     
 
-  }]);
+  }])
+
+    .controller('FarmsCtrl',function($scope){
+          $scope.options = {
+              dataSource: {
+                  transport: {
+                      read: {
+                          url: "../content/dataviz/js/population-usa.json",
+                          dataType: "json"
+                      }
+                  },
+                  schema: {
+                      model: {
+                          children: "items"
+                      }
+                  }
+              },
+              valueField: "value",
+              textField: "name",
+              colors: [
+                  ["#0c81c5", "#c5dceb"], ["#3aa2de", "#d8ecf8"],
+                  ["#449000", "#dae9cc"], ["#76b800", "#dae7c3"],
+                  ["#ffae00", "#f5e5c3"], ["#ef4c00", "#f1b092"],
+                  ["#9e0a61", "#eccedf"]
+              ]
+          };
+      });
 
     
