@@ -6,92 +6,84 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
-    <div ng-controller="allCountCntrl">
+    <div ng-controller="allCountCntrl" class="dash-board">
         
         
         <div class="row">
         <!--stats number="{{farmVillageCount}}" comments="Farm Villages" colour="green" type="location-arrow" goto="dashboard.farmvillages"></stats-->
-         <a ui-sref="dashboard.farmvillages">    
                    
                            
                                
-                                <div class="col-md-3">
-                  <div class="circle c1 img-circle">
+                                <div class="col-xs-6  col-md-3">
+                  <div class="circle c1 img-circle" ng-click="showFarmVillages()">
                       
                       <span class="blue price-large blue">{{farmVillageCount}}</span><br>
                      <h4 class="blue">Farm Villages</h4>
                     
                   </div>
-              </div><!-- .Col-md-3 ends here -->
+              </div><!-- .col-xs-6 col-md-3 ends here -->
                                 
                                 
                                 
                      
-                </a>
    
         <!--stats number="{{farmersCount}}" comments="Farmers" colour="green" type="user" goto="dashboard.farmers"></stats-->
-         <a ui-sref="dashboard.farmers">    
                   
                            
                                
-                                <div class="col-md-3">
-                  <div class="circle c2 img-circle">
+                                <div class="col-xs-6 col-md-3">
+                  <div class="circle c2 img-circle" ng-click="showFarmers()">
                       
                       <span class="blue price-large blue">{{farmersCount}}</span><br>
                      <h4 class="blue">Farmers</h4>
                     
                   </div>
-              </div><!-- .Col-md-3 ends here -->
+              </div><!-- .col-xs-6 col-md-3 ends here -->
                                 
                                 
                               
                      
-               </a>
         
         
         
         
         <!--stats number="{{farmsCount}}" comments="Farm" colour="green" type="leaf" goto="dashboard.farms"></stats-->
-         <a ui-sref="dashboard.farms">    
                 
                           
                                
-                                <div class="col-md-3">
-                  <div class="circle c3 img-circle">
+                                <div class="col-xs-6 col-md-3">
+                  <div class="circle c3 img-circle" ng-click="showFarms()">
                       
                       <span class="blue price-large blue">{{farmsCount}}</span><br>
                      <h4 class="blue">Farm</h4>
                     
                   </div>
-              </div><!-- .Col-md-3 ends here -->
+              </div><!-- .col-xs-6 col-md-3 ends here -->
                                 
                                 
                                 
                             
                      
-                </a>
         
         
         
         <!--stats number="{{devicesCount}}" comments="Mitra" colour="green" type="support" goto="dashboard.devices"></stats-->
-          <a ui-sref="dashboard.devices">    
                   
                           
                                
-                                <div class="col-md-3">
-                  <div class="circle c4 img-circle">
+                                <div class="col-xs-6 col-md-3">
+                  <div class="circle c4 img-circle" ng-click="showMitras()">
                       
                       <span class="blue price-large blue">{{devicesCount}}</span><br>
                      <h4 class="blue">Mitra - Devices</h4>
                     
                   </div>
-              </div><!-- .Col-md-3 ends here -->
+              </div><!-- .col-xs-6 col-md-3 ends here -->
                                 
                                 
                                 
                              
                      
-               </a>
         
         </div>
         <div class="row margin-top-10">
@@ -101,25 +93,29 @@
        
         <!--stats number="8" comments="Water Available" colour="green" type="support"></stats-->
        
-                    <a ui-sref="dashboard.waterAvailable">    
                   
                             
-                               
-                                <div class="col-md-3">
-                  <div class="circle c5 img-circle">
-                      
-                      <span class="blue price-large blue">{{waterCount.capacity}}</span><br>
-                      <h4 class="blue">Litres</h4><br>
-                     <h4 class="blue">Water Available</h4>
-                    
-                  </div>
-              </div><!-- .Col-md-3 ends here -->
+                                
+                                <div class="col-xs-6 col-md-3">
+                  <svg id="fillgauge1" width="80%" height="250"></svg>
+                                            <script language="JavaScript">
+                                                var gauge1 = loadLiquidFillGauge("fillgauge1",5645);
+                                                var config1 = liquidFillGaugeDefaultSettings();
+                                                config1.circleColor = "#FF7777";
+                                                config1.textColor = "#FF4444";
+                                                config1.waveTextColor = "#FFAAAA";
+                                                config1.waveColor = "#FFDDDD";
+                                                config1.circleThickness = 0.2;
+                                                config1.textVertPosition = 0.2;
+                                                config1.waveAnimateTime = 1000;
+                                        
+                                            </script>
+              </div><!-- .col-xs-6 col-md-3 ends here -->
                                 
                                 
                                 
                              
                      
-                </a>
    
         
         
@@ -128,11 +124,10 @@
         
         
         <!--stats number="8" comments="Projected Water Use" colour="green" type="support" goto="dashboard.watersource"></stats-->
-          <a ui-sref="dashboard.waterUsed">    
                    
                            
                                
-                                <div class="col-md-3">
+                                <div class="col-xs-6 col-md-3">
                   <div class="circle c6 img-circle">
                       
                       <span class="blue price-large blue">2500</span><br>
@@ -140,23 +135,21 @@
                      <h4 class="blue">Water Used</h4>
                     
                   </div>
-              </div><!-- .Col-md-3 ends here -->
+              </div><!-- .col-xs-6 col-md-3 ends here -->
                                 
                                 
                                 
                              
                      
-               </a>
         
         
         
         <!--stats number="8" comments="Projected Water Saved" colour="green" type="support"></stats-->
         
-        <a ui-sref="dashboard.waterSaved">    
                    
                            
                                
-                                <div class="col-md-3">
+                                <div class="col-xs-6 col-md-3">
                   <div class="circle c7 img-circle">
                       
                       <span class="blue price-large blue">2689</span><br>
@@ -164,22 +157,20 @@
                      <h4 class="blue">Water Saved</h4>
                     
                   </div>
-              </div><!-- .Col-md-3 ends here -->
+              </div><!-- .col-xs-6 col-md-3 ends here -->
                                 
                                 
                                 
                              
                      
-               </a>
         
         
         <!--stats number="8" comments="Projected Profit" colour="green" type="support"></stats-->
         
-          <a ui-sref="dashboard.waterProfit">    
                   
                        
                                
-                                <div class="col-md-3">
+                                <div class="col-xs-6 col-md-3">
                   <div class="circle c8 img-circle">
                       
                       <span class="blue price-large blue">15%</span><br>
@@ -187,13 +178,12 @@
                      <h4 class="blue">Profit</h4>
                     
                   </div>
-              </div><!-- .Col-md-3 ends here -->
+              </div><!-- .col-xs-6 col-md-3 ends here -->
                                 
                                 
                                 
                              
                      
-               </a>
         
         </div>
         
