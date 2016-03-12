@@ -195,17 +195,17 @@ angular
     })
      
     .state('dashboard.farms',{
-        templateUrl:'views/pages/farms.html',
+        templateUrl:'views/farm.html',
         url:'/farms'
     })
    
      .state('dashboard.devices',{
-        templateUrl:'views/table.html',
-        url:'/bladevicesnk'
+        templateUrl:'views/devices.html',
+        url:'/devices'
     })
-     .state('dashboard.watersource',{
-        templateUrl:'views/pages/watersource.html',
-        url:'/watersource'
+     .state('dashboard.waterAvailable',{
+        templateUrl:'views/waterCount.html',
+        url:'/waterAvailable'
     })
     
     
