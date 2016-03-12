@@ -5,59 +5,62 @@
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>
-	<div class="col-lg-6">
-		<div class="row">
-			<div class="form-group">
-				<label>Crops:</label>
-				<div class="checkbox">
-					<label>
-						<input type="checkbox" value="">Water Melon
-					</label>
-					<label>
-						<input type="checkbox" value="">Cucumber
-					</label>
-					<label>
-						<input type="checkbox" value="">Barley
-					</label>
-					<label>
-						<input type="checkbox" value="">Tomato
-					</label>
-					<label>
-						<input type="checkbox" value="">Onion
-					</label>
-				</div>
-			</div>
-			
-			<div class="progress-box" ng-app>
-			  <label>Water Level:</label>
-			  <div class="percentage-cur" ng-init="selectedRange=500">
-				<span class="num">{{ selectedRange }} L</span>
-			  </div>
-			  <div class="progress-bar progress-bar-slider">
-				<input class="progress-slider" type="range" min="0" max="500" ng-model="selectedRange">
-				<div class="inner" ng-style="{ width: selectedRange/500*100 + '%' || '0%' }"></div>
-			  </div>
-			</div>
-
-			<div class="col-lg-10 col-sm-12" id="doughnut-chart" ng-controller="ChartCtrl">
-				<div class="panel panel-default">
-					<div class="panel-body">
-					<canvas id="doughnut" class="chart chart-doughnut chart-xs" data="donut.data" labels="donut.labels" legend="false"></canvas>
+	
+	<div class="row text-center">
+		<div class="col-lg-8 center-block">
+			<div class="row">
+				<div class="form-group">
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">Water Melon
+						</label>
+						<label>
+							<input type="checkbox" value="">Cucumber
+						</label>
+						<label>
+							<input type="checkbox" value="">Barley
+						</label>
+						<label>
+							<input type="checkbox" value="">Tomato
+						</label>
+						<label>
+							<input type="checkbox" value="">Onion
+						</label>
 					</div>
 				</div>
 			</div>
-			  <div class="form-group">
-				<div class="radio">
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Land
-					</label>
+			<div class="row">
+				<div class="col-lg-1 col-sm-1 text-center">
+					<input id="ex4" type="text" data-slider-min="0" data-slider-max="500" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
+					<br /><br />
+					<label>Water</label>
 				</div>
-				<div class="radio">
-					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Price
-					</label>
+				<div class="col-lg-10 col-sm-10" id="doughnut-chart" ng-controller="ChartCtrl">
+					<div class="panel panel-default">
+						<div class="panel-body">
+						<canvas id="doughnut" class="chart chart-doughnut chart-xs" data="donut.data" labels="donut.labels" legend="false"></canvas>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-1 col-sm-1">
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Land
+						</label>
+					</div>
+					<div class="radio">
+						<label>
+							<input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Price
+						</label>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+$("#ex4").slider({
+	reversed : true
+});
+</script>

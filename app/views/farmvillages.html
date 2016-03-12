@@ -6,98 +6,54 @@
 		<!-- /.col-lg-12 -->
 	</div>
     <div class="row">
-		
 
-
-<div ng-controller="farmVillageCntrl">
-	<!--label>Search: <input ng-model="searchText"></label-->
-	<div class="input-group custom-search-form">
-        <input ng-model="searchText" type="text" class="form-control" placeholder="Search...">
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-                <i class="fa fa-search"></i>
-            </button>
-        </span>
-    </div>
-	
-	
-	<!-- /.row -->
-	<div class="row"> 
-	<br />
-	<div class="col-lg-2 col-md-3 col-xs-6" ng-repeat="village in userDetail | filter:searchText">
-		<a href="javascript:void(0)" data-toggle="modal" data-target="#villagemodal{{village.id}}">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<div class="row">
-					<!--div class="col-xs-3">
-						<i class="fa fa-leaf fa-2x"></i>
-					</div-->
-					<div class="col-xs-9">
-						<h4>{{village.name}}</h4>
-						<h5>{{village.location}}</h5>
+		<div ng-controller="farmVillageCntrl">
+		<!--label>Search: <input ng-model="searchText"></label-->
+		<div class="input-group custom-search-form">
+			<input ng-model="searchText" type="text" class="form-control" placeholder="Search...">
+			<span class="input-group-btn">
+				<button class="btn btn-default" type="button">
+					<i class="fa fa-search"></i>
+				</button>
+			</span>
+		</div>
+		<!-- /.row -->
+		<div class="row"> 
+			<br />
+			<div class="col-lg-3" ng-repeat="village in userDetail | filter:searchText">
+				<!--a href="javascript:void(0)" data-toggle="modal" data-target="#villagemodal{{village.id}}"-->
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<div class="row">
+							<!--div class="col-xs-3">
+								<i class="fa fa-leaf fa-2x"></i>
+							</div-->
+							<div class="col-xs-12">
+								<h4>{{village.name}}</h4>
+								<h5>{{village.location}}</h5>
+								<div class="col-lg-6 col-sm-6">
+								<div class="circle-small c3 img-circle">
+									<span class="blue price-large blue ng-binding">{{village.noOfFarms}}</span><br>
+									<h4 class="blue">Farms</h4>
+							    </div>
+								</div>
+								<div class="col-lg-6 col-sm-6">
+								<div class="circle-small c1 img-circle">
+									<span class="blue price-large blue ng-binding">{{village.waterCapacity}} L</span><br>
+									<h4 class="blue">Water</h4>
+							    </div>
+								</div>
+								<!--p>No. of Farms: {{village.noOfFarms}}</p>
+								<p>Water Capacity: {{village.waterCapacity}}</p-->
+								<p>&nbsp;</p>
+								<button ui-sref="dashboard.plan({ id: village.id })" class="btn btn-outline  btn-info" type="button">Generate Plan</button>
+								<button ui-sref="dashboard.iot({ id: village.id })" class="btn btn-outline  btn-info" type="button">View Plan</button>
+							</div>
+						</div>
 					</div>
+				
 				</div>
 			</div>
-		
 		</div>
-		</a>
-		<!-- Modal -->
-		<div class="modal fade" id="villagemodal{{village.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="myModalLabel">{{village.name}}</h4>
-					</div>
-					<div class="modal-body">
-						<!-- /.panel-heading -->
-            <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <td><Strong>Name:</strong></td>
-                                <td>{{village.name}}</td>
-                            </tr>
-                          
-                            <tr>
-                                <td><Strong>Location:</strong></td>
-                                <td>{{village.location}}</td>
-                            </tr>
-                             <tr>
-                                <td><Strong>No Of Farms:</strong></td>
-                                <td>{{village.noOfFarms}}</td>
-                            </tr>
-                             <tr>
-                                <td><Strong>Water Capacity:</strong></td>
-                                <td>{{village.waterCapacity}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.table-responsive -->
-            </div>
-            <!-- /.panel-body -->
-					</div>
-					<div class="modal-footer">
-						<button ui-sref="dashboard.plan({ id: village.id })" type="button" class="btn btn-primary">Generate Plan</button>
-						<button ui-sref="dashboard.iot({ id: village.id })" type="button" class="btn btn-primary">Farm details</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-				<!-- /.modal-content -->
-			</div>
-			<!-- /.modal-dialog -->
-		</div>
-		<!-- /.modal -->
-	</div>
-	</div>
-	
-
-	
-
-
-
-
     </div>	
 </div>
