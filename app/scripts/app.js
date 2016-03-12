@@ -187,7 +187,8 @@ angular
     
      .state('dashboard.farmvillages',{
         templateUrl:'views/farmvillages.html',
-        url:'/farmvillages'
+        url:'/farmvillages/:fpclid',
+        params : {fpclid : null}
     })
     
      .state('dashboard.farmers',{

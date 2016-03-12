@@ -54,7 +54,7 @@ testApp.factory("demoFac", ['$http',function($http){
 }]);
 
 //get the coount of all the data
-testApp.controller('allCountCntrl',function($scope,demoFac){
+testApp.controller('allCountCntrl',function($scope,demoFac,$state,$stateParams){
 
     //Farm Village detai;s API
     demoFac.fetchUserDetails().success(function(response){ 
@@ -82,6 +82,24 @@ testApp.controller('allCountCntrl',function($scope,demoFac){
     demoFac.fetchWaterDetails().success(function(response){ 
 			$scope.waterCount = response;
 		});
+    
+     demoFac.fetchWaterDetails().success(function(response){ 
+			$scope.water = response;
+		});
+    // clickFunctions
+    $scope.showFarmVillages = function(obj){
+        console.log($stateParams);
+        $state.go('dashboard.farmVillages',{fpclid:obj})
+    }
+    $scope.showFarmers= function(){
+        $state.go('dashboard.farmers')
+    }
+    $scope.showFarms= function(){
+        $state.go('dashboard.farms')
+    }
+    $scope.showMitras= function(){
+        $state.go('dashboard.devices')
+    }
 	
 });	
 	
@@ -121,11 +139,3 @@ testApp.controller('deviceCntrl',function($scope,demoFac){
 	
 });	
 
-testApp.controller('waterCntrl',function($scope,demoFac){
-     //farms detai;s API
-    demoFac.fetchWaterDetails().success(function(response){ 
-			$scope.water = response;
-		});
-	
-});	
-	 
