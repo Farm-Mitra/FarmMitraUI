@@ -161,18 +161,20 @@ angular
    })
     
      .state('dashboard.farmvillages',{
-        templateUrl:'views/pages/farmvillages.html',
+        templateUrl:'views/farmvillages.html',
         url:'/farmvillages'
+    })
+    
+     .state('dashboard.farmers',{
+        templateUrl:'views/farmers.html',
+        url:'/farmers'
     })
     
     .state('dashboard.farms',{
         templateUrl:'views/pages/farms.html',
         url:'/farms'
     })
-    .state('dashboard.farmers',{
-        templateUrl:'views/pages/farmers.html',
-        url:'/farmers'
-    })
+   
      .state('dashboard.devices',{
         templateUrl:'views/table.html',
         url:'/bladevicesnk'
