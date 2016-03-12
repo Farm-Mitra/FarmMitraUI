@@ -87,7 +87,7 @@ background-color: #eee;
 } 
 /* custom css */
 .panel-heading {
-	min-height: 200px;
+	min-height: 180px;
 }
 .panel, .panel-heading {
     border-radius: 0;
