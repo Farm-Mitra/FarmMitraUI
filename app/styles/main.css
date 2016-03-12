@@ -180,43 +180,45 @@ div.pvtlD3TreemapNode {
 }
 
 .c1:hover{
-  background: #39b3d7;
-  color: #ffffff;
+   background: #ffffff;
+   color: #39b3d7;
 }
-.c1 .blue{
-  color: #39b3d7;
-}
-.c1:hover .blue{
-  color: #ffffff;
-    text-decoration: none !important;
+.c1 {
+background: #39b3d7;
+ color: #ffffff;
 }
 
-.c2:hover{
+
+.c2 {
   background: #ed9c28;
   color: #ffffff;
 }
-.c2 {
+.c2:hover {
   color: #ed9c28;
-}
-.c2:hover .yellow{
-  color: #ffffff;
+    background: #ffffff;
 }
 
-.c3:hover{
+
+.c3 {
   background: #47a447;
   color: #ffffff;
 }
-.c3 {
+
+
+.c3:hover {
   color: #47a447;
-}
-.c3:hover .green{
-  color: #ffffff;
+    background: #ffffff;
 }
 
 .c4:hover{
-  background: #d2322d;
+  color: #d2322d;
+    background: #ffffff;
+}
+.c4 {
+    background: #d2322d;
   color: #ffffff;
 }
+
 .c5 {
   color: #2E2EFE;
 }
