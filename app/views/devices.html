@@ -26,14 +26,15 @@
 	<div class="row">
 	<br />
 	<div class="col-lg-3" ng-repeat="village in devices | filter:searchText">
-		<a href="javascript:void(0)" data-toggle="modal" data-target="#villagemodal{{village.id}}">
-		<div class="panel panel-primary">
+		<!--a href="javascript:void(0)" data-toggle="modal" data-target="#villagemodal{{village.id}}"-->
+		<div class="panel panel-red">
 			<div class="panel-heading">
 				<div class="row">
 					<div class="col-xs-3">
-						<i class="fa fa-leaf fa-2x"></i>
+						<i class="fa fa-chain fa-2x"></i>
 					</div>
 					<div class="col-xs-9">
+						<h4>Device ID: {{village.id}}</h4>
 						<h4>{{village.deviceName}}</h4>
 						<h5>{{village.deviceMake}}</h5>
 					</div>
@@ -41,50 +42,7 @@
 			</div>
 		
 		</div>
-		</a>
-		<!-- Modal -->
-		<div class="modal fade" id="villagemodal{{village.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="myModalLabel">{{village.deviceName}}</h4>
-					</div>
-					<div class="modal-body">
-						<!-- /.panel-heading -->
-            <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <td><Strong>Device ID:</Strong></td>
-                                <td>{{village.id}}</td>
-                            </tr>
-                            <tr>
-                                <td><Strong>Device Name:</Strong></td>
-                                <td>{{village.deviceName}}</td>
-                            </tr>
-                            <tr>
-                                <td><Strong>Device Make:</Strong></td>
-                                <td>{{village.deviceMake}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.table-responsive -->
-            </div>
-            <!-- /.panel-body -->
-					</div>
-					<div class="modal-footer">
-						
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-				<!-- /.modal-content -->
-			</div>
-			<!-- /.modal-dialog -->
-		</div>
-		<!-- /.modal -->
+		
 	</div>
 	</div>
     </div>	

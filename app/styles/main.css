@@ -92,6 +92,17 @@ background-color: #eee;
 .panel, .panel-heading {
     border-radius: 0;
 }
+
+.panel-primary {
+    border-color: #39b3d7;
+}
+
+.panel-primary > .panel-heading {
+    background-color: #39b3d7;
+	border-color: #39b3d7;
+}
+
+
 div.pvtlD3TreemapNode {
     border: solid 1px white;
     line-height: 0.95;

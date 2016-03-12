@@ -24,7 +24,7 @@
 	<div class="row">
 	<br />
 	<div class="col-lg-3" ng-repeat="village in farms | filter:searchText">
-		<a href="javascript:void(0)" data-toggle="modal" data-target="#villagemodal{{village.id}}">
+		<!--a href="javascript:void(0)" data-toggle="modal" data-target="#villagemodal{{village.id}}"-->
 		<div class="panel panel-green">
 			<div class="panel-heading">
 				<div class="row">
@@ -35,65 +35,15 @@
 						<h4>{{village.id}}</h4>
                         <h4>{{village.farmerName}}</h4>
                         <h4>{{village.farmVillageName}}</h4>
-						
+						<p>Latitude: {{village.lattitude}}</p>
+						<p>Longitude: {{village.longitude}}</p>
+						<p>Area: {{village.farmArea}}</p>
 					</div>
 				</div>
 			</div>
 		
 		</div>
-		</a>
-		<!-- Modal -->
-		<div class="modal fade" id="villagemodal{{village.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-						<h4 class="modal-title" id="myModalLabel">{{village.id}} - {{village.farmerName}}</h4>
-					</div>
-					<div class="modal-body">
-						<!-- /.panel-heading -->
-            <div class="panel-body">
-                <div class="table-responsive">
-                    <table class="table table-striped">
-                        <tbody>
-                            <tr>
-                                <td><Strong>Field ID:</strong></td>
-                                <td>{{village.id}}</td>
-                            </tr>
-                            <tr>
-                                <td><Strong>Field Capacity:</strong></td>
-                                <td>{{village.fc}}</td>
-                            </tr>
-                            <tr>
-                                <td><Strong>Lattitude:</strong></td>
-                                <td>{{village.lattitude}}</td>
-                            </tr>
-                             <tr>
-                                <td><Strong>Longitude:</strong></td>
-                                <td>{{village.longitude}}</td>
-                            </tr>
-                             <tr>
-                                <td><Strong>Area:</strong></td>
-                                <td>{{village.area}} - {{village.farmVillageName}}</td>
-                            </tr>
-                           
-                        </tbody>
-                    </table>
-                </div>
-                <!-- /.table-responsive -->
-            </div>
-            <!-- /.panel-body -->
-					</div>
-					<div class="modal-footer">
-						
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-				<!-- /.modal-content -->
-			</div>
-			<!-- /.modal-dialog -->
-		</div>
-		<!-- /.modal -->
+		
 	</div>
 	</div>
     </div>	
