@@ -134,6 +134,23 @@ div.pvtlD3TreemapNode {
  
 }
 
+.row{}
+.circle-small{
+    background: #ffffff none repeat scroll 0 0;
+    border: 8px solid #f2f2f2;
+    height: 100px;
+    margin-top: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 100px;
+    
+    transition: all 0.5s;
+  -moz-transition: all 0.5s; /* Firefox 4 */
+  -webkit-transition: all 0.5s; /* Safari and Chrome */
+  -o-transition: all 0.5s; /* Opera */
+ 
+}
+
 .c6{
   background: #F2F2F2 !important;  
 }

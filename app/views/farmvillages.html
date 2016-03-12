@@ -30,8 +30,20 @@
 							<div class="col-xs-12">
 								<h4>{{village.name}}</h4>
 								<h5>{{village.location}}</h5>
-								<p>No. of Farms: {{village.noOfFarms}}</p>
-								<p>Water Capacity: {{village.waterCapacity}}</p>
+								<div class="col-lg-6 col-sm-6">
+								<div class="circle-small c3 img-circle">
+									<span class="blue price-large blue ng-binding">{{village.noOfFarms}}</span><br>
+									<h4 class="blue">Farms</h4>
+							    </div>
+								</div>
+								<div class="col-lg-6 col-sm-6">
+								<div class="circle-small c1 img-circle">
+									<span class="blue price-large blue ng-binding">{{village.waterCapacity}} L</span><br>
+									<h4 class="blue">Water</h4>
+							    </div>
+								</div>
+								<!--p>No. of Farms: {{village.noOfFarms}}</p>
+								<p>Water Capacity: {{village.waterCapacity}}</p-->
 								<p>&nbsp;</p>
 								<button ui-sref="dashboard.plan({ id: village.id })" class="btn btn-outline  btn-info" type="button">Generate Plan</button>
 								<button ui-sref="dashboard.iot({ id: village.id })" class="btn btn-outline  btn-info" type="button">View Plan</button>
