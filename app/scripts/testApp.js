@@ -14,7 +14,21 @@ testApp.factory("demoFac", ['$http',function($http){
     
     obj.fetchFarmerDetails = function(){   /*This just to demonstrate common usage of factories to serve $http responses, by returning the entire promise */
 		
-          return $http({method : 'GET',url : 'http://10.244.25.67:8080/farmmitra/rest/fpcl/1/farmvillage/'});
+          return $http({method : 'GET',url : 'http://10.244.25.67:8080/farmmitra/rest/fpcl/1/farmer/'});
+        
+        //return $http.get('mockjson/userprofile.json');
+	}
+    
+     obj.fetchFarmDetails = function(){   /*This just to demonstrate common usage of factories to serve $http responses, by returning the entire promise */
+		
+          return $http({method : 'GET',url : 'http://10.244.25.67:8080/farmmitra/rest/fpcl/1/farm/'});
+        
+        //return $http.get('mockjson/userprofile.json');
+	}
+     
+      obj.fetchDeviceDetails = function(){   /*This just to demonstrate common usage of factories to serve $http responses, by returning the entire promise */
+		
+          return $http({method : 'GET',url : 'http://10.244.25.67:8080/farmmitra/rest/fpcl/1/device/'});
         
         //return $http.get('mockjson/userprofile.json');
 	}
@@ -27,19 +41,36 @@ testApp.factory("demoFac", ['$http',function($http){
 
 }]);
 
-testApp.controller('testCtrl',function($scope,demoFac){
+testApp.controller('farmVillageCntrl',function($scope,demoFac){
 
     //Farm Village detai;s API
     demoFac.fetchUserDetails().success(function(response){ 
 			$scope.userDetail = response;
 		});
-		
-    //farmers detai;s API
+});	
+
+testApp.controller('farmerCntrl',function($scope,demoFac){
+
+   //farmers detai;s API
     demoFac.fetchFarmerDetails().success(function(response){ 
 			$scope.farmers = response;
 		});
-    
-	
-	
-	 
 });
+    
+
+testApp.controller('farmCntrl',function($scope,demoFac){
+     //farms detai;s API
+    demoFac.fetchFarmDetails().success(function(response){ 
+			$scope.farms = response;
+		});
+	
+});	
+
+testApp.controller('deviceCntrl',function($scope,demoFac){
+     //farms detai;s API
+    demoFac.fetchDeviceDetails().success(function(response){ 
+			$scope.devices = response;
+		});
+	
+});	
+	 
