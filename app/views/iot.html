@@ -1,0 +1,85 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-lg-12">
+			<h1 class="page-header">Live Farm Details</h1>
+		</div>
+		<!-- /.col-lg-12 -->
+	</div>
+    <div class="row">
+		
+
+	<div ng-init="farmDetails = [
+		{id: 1, name: 'Farm 1', active:true, level: 23},
+		{id: 2, name: 'Farm 2', active:false, level: 17},
+		{id: 3, name: 'Farm 3', active:true, level: 25},
+		{id: 4, name: 'Farm 4', active:false, level: 23},
+		{id: 5, name: 'Farm 5', active:true, level: 20}
+	]"></div>
+	<div ng-controller="testCtrl">
+		<!-- /.row -->
+		<div class="row"> 
+			<br />
+			<div class="col-lg-3" ng-repeat="farm in farmDetails | filter:searchText">
+				<a href="javascript:void(0)" data-toggle="modal" data-target="#farmmodal{{farm.id}}">
+				<div class="panel panel-red">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-3">
+								<i class="fa fa-2x fa-leaf"></i>
+							</div>
+							<div class="col-xs-9">
+								<h4>{{farm.name}}</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+				</a>
+				<!-- Modal -->
+				<div class="modal fade" id="farmmodal{{farm.id}}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+					<div class="modal-dialog">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title" id="myModalLabel">{{farm.name}}</h4>
+							</div>
+							<div class="modal-body">
+								<!-- /.panel-heading -->
+					<div class="panel-body">
+						   <svg id="fillgauge1" width="120%" height="250" onclick="gauge1.update(NewValue());"></svg>
+					  
+							<script language="JavaScript">
+								var gauge1 = loadLiquidFillGauge("fillgauge1", 55);
+								var config1 = liquidFillGaugeDefaultSettings();
+								config1.circleColor = "#FF7777";
+								config1.textColor = "#FF4444";
+								config1.waveTextColor = "#FFAAAA";
+								config1.waveColor = "#FFDDDD";
+								config1.circleThickness = 0.2;
+								config1.textVertPosition = 0.2;
+								config1.waveAnimateTime = 1000;
+								
+								function NewValue(){
+									if(Math.random() > .5){
+										return Math.round(Math.random()*100);
+									} else {
+										return (Math.random()*100).toFixed(1);
+									}
+								}
+							</script>
+						<!-- /.table-responsive -->
+					</div>
+					<!-- /.panel-body -->
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
+						<!-- /.modal-content -->
+					</div>
+					<!-- /.modal-dialog -->
+				</div>
+				<!-- /.modal -->
+			</div>
+		</div>
+    </div>	
+</div>
