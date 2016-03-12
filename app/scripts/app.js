@@ -93,6 +93,10 @@ angular
           }
         }
       })
+      .state('dashboard.farmVillages',{
+        templateUrl:'views/farmvillages.html',
+        url:'/farmvillages'
+    })
       .state('dashboard.form',{
         templateUrl:'views/form.html',
         url:'/form'
