@@ -6,26 +6,15 @@
 		<!-- /.col-lg-12 -->
 	</div>
 	
-	<div class="row text-center">
+	<div class="row text-center" ng-controller="ChartCtrl">
 		<div class="col-lg-8 center-block">
 			<div class="row">
 				<div class="form-group">
 					<div class="checkbox">
-						<label>
-							<input type="checkbox" value="">Water Melon
-						</label>
-						<label>
-							<input type="checkbox" value="">Cucumber
-						</label>
-						<label>
-							<input type="checkbox" value="">Barley
-						</label>
-						<label>
-							<input type="checkbox" value="">Tomato
-						</label>
-						<label>
-							<input type="checkbox" value="">Onion
-						</label>
+                        {{farmCount}}
+						<label ng-repeat="crops in cropPlan.children">
+							<input type="checkbox" value="{{crops.label}}" checked>{{crops.label}}
+						</label>						
 					</div>
 				</div>
 			</div>
@@ -35,12 +24,14 @@
 					<br /><br />
 					<label>Water</label>
 				</div>
-				<div class="col-lg-10 col-sm-10" id="doughnut-chart" ng-controller="ChartCtrl">
-					<div class="panel panel-default">
-						<div class="panel-body">
-						<canvas id="doughnut" class="chart chart-doughnut chart-xs" data="donut.data" labels="donut.labels" legend="false"></canvas>
-						</div>
-					</div>
+				<div class="col-lg-10 col-sm-10" id="doughnut-chart" >
+					 <pvtl-d3-treemap width="600" height="400" data="cropPlan" value="farmCount" ng-class="farmArea">
+                        <div>
+                            <div ng-if="!children">
+                                <span ng-class="label" class="label">{{label}}</span>
+                            </div>
+                        </div>
+                    </pvtl-d3-treemap>
 				</div>
 				
 				<div class="col-lg-1 col-sm-1">

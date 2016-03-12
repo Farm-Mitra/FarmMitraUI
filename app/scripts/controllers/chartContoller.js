@@ -7,7 +7,7 @@
  * Controller of the sbAdminApp
  */
 angular.module('sbAdminApp')
-  .controller('ChartCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
+  .controller('ChartCtrl', ['$scope', '$timeout','demoFac', function ($scope, $timeout,demoFac) {
     $scope.line = {
 	    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 	    series: ['Series A', 'Series B'],
@@ -66,4 +66,22 @@ angular.module('sbAdminApp')
     	    'Pie' : 'PolarArea';
 		}
     };
+    demoFac.fetchFVPlan().success(function(data){
+        console.log(data);
+        var price  = data[0];
+        var priceLen = price.length;
+        var counts = {}
+        for(var i= 0;i<priceLen;i++){
+            if(counts[price[i].name] == undefined){
+                counts[price[i].name] = 1;
+            } else {
+                counts[price[i].name]++;
+            }
+        }
+        var children = [];
+        for(var k in counts){
+            children.push({label:k,farmCount:counts[k]});  
+        }
+        $scope.cropPlan = {label:'farmVillage','children':children};        
+    });
 }]);
