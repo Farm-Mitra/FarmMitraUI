@@ -114,6 +114,104 @@ div.pvtlD3TreemapNode {
 .node div {
    padding: 6px 4%;
 }
+
+/* circlr */
+
+.row{}
+.circle{
+  background: #ffffff;
+  padding: 35px;
+  text-align: center;
+  height: 250px;
+  width: 250px;
+  border: 20px solid #F2F2F2;
+    margin-top:10px;
+    
+    transition: all 0.5s;
+  -moz-transition: all 0.5s; /* Firefox 4 */
+  -webkit-transition: all 0.5s; /* Safari and Chrome */
+  -o-transition: all 0.5s; /* Opera */
+ 
+}
+
+.c6{
+  background: #F2F2F2 !important;  
+}
+.c7{
+  background: #F2F2F2 !important;  
+}
+
+.c8{
+  background: #F2F2F2 !important;  
+}
+.circle h4{
+  margin: 0;
+  padding: 0;
+}
+.circle p{}
+.circle span{}
+.circle span.icon{
+}
+.circle span.icon i{
+  font-size: 48px;
+}
+.circle span.price-large{
+  font-size: 68px
+}
+.price-small{
+  font-size: 24px 
+}
+
+.c1:hover{
+  background: #39b3d7;
+  color: #ffffff;
+}
+.c1 .blue{
+  color: #39b3d7;
+}
+.c1:hover .blue{
+  color: #ffffff;
+    text-decoration: none !important;
+}
+
+.c2:hover{
+  background: #ed9c28;
+  color: #ffffff;
+}
+.c2 {
+  color: #ed9c28;
+}
+.c2:hover .yellow{
+  color: #ffffff;
+}
+
+.c3:hover{
+  background: #47a447;
+  color: #ffffff;
+}
+.c3 {
+  color: #47a447;
+}
+.c3:hover .green{
+  color: #ffffff;
+}
+
+.c4:hover{
+  background: #d2322d;
+  color: #ffffff;
+}
+.c5 {
+  color: #2E2EFE;
+}
+.c5:hover{
+    background: #2E2EFE;
+  color: #ffffff;
+}
+
+.margin-top-10 {
+    margin-top:10px;
+}
+
 .panel-primary .panel-heading:hover{
     background-color: #286090;
 	border-color: #66afe9;
@@ -148,3 +246,65 @@ span.id:before {
             display: block;
             font-weight: normal;
         }
+
+.progress-box {
+	width: 100%;
+	margin: 20px 0;
+}
+
+.progress-box .percentage-cur .num {
+	margin-right: 5px;
+}
+
+.progress-box .progress-bar {
+	width: 100%;
+	height: 12px;
+	background: #f2f1f1;
+	margin-bottom: 3px;
+	border: 1px solid #dfdfdf;
+	box-shadow: 0 0 2px #D5D4D4 inset;
+  position: relative;
+}
+
+.progress-box .progress-bar .inner {
+  position: relative;
+	width: 0;
+	height:100%;
+	background: #239bd6; 
+}
+
+.progress-bar .inner {
+	height: 0;
+	width: 0;
+	transition: all 1s ease-out;
+}
+
+.progress-bar-slider .inner {
+  transition: none;
+}
+
+.progress-bar-slider .inner:after {
+  content: " ";
+  width: 5px;
+  height: 14px;;
+  background-color:#ccc;
+  position: absolute;
+  right: -2px;
+  top: -2px;
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+  margin: 0px;
+}
+
+.progress-slider {
+  opacity: 0;
+  width: 100%;
+  height: 15px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  cursor: pointer;
+  z-index: 1;
+}
+
