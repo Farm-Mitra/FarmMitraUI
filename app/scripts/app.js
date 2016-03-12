@@ -117,6 +117,10 @@ angular
           }
         }
     })
+	.state('dashboard.iot',{
+        templateUrl:'views/iot.html',
+        url:'/iot/:id'
+    })
       .state('dashboard.form',{
         templateUrl:'views/form.html',
         url:'/form'
