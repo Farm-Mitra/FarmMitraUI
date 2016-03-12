@@ -97,13 +97,48 @@ angular
         templateUrl:'views/farmvillages.html',
         url:'/farmvillages'
     })
+	.state('dashboard.plan',{
+        templateUrl:'views/plan.html',
+        url:'/plan/:id',
+        controller:'ChartCtrl',
+        resolve: {
+          loadMyFile:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'chart.js',
+              files:[
+                'bower_components/angular-chart.js/dist/angular-chart.min.js',
+                'bower_components/angular-chart.js/dist/angular-chart.css'
+              ]
+            }),
+            $ocLazyLoad.load({
+                name:'sbAdminApp',
+                files:['scripts/controllers/chartContoller.js']
+            })
+          }
+        }
+    })
       .state('dashboard.form',{
         templateUrl:'views/form.html',
         url:'/form'
     })
       .state('dashboard.blank',{
         templateUrl:'views/pages/blank.html',
-        url:'/blank'
+        url:'/blank',
+        controller:'DemoController',
+        resolve: {
+          loadMyFiles:function($ocLazyLoad) {
+            return $ocLazyLoad.load({
+              name:'sbAdminApp',
+              files:[
+              'scripts/directives/slider/angular.rangeSlider.js'
+              ]
+            }),
+            $ocLazyLoad.load({
+                name:'sbAdminApp',
+                files:['scripts/controllers/demoContoller.js']
+            })
+          }
+        }
     })
       .state('login',{
         templateUrl:'views/pages/login.html',

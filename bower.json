@@ -24,8 +24,10 @@
     "angular-mocks": "1.2.16",
     "angular-scenario": "1.2.16"
   },
-  "resolutions":{
-      "bootstrap": "~3.1.1"
-    },
+  "resolutions": {
+    "bootstrap": "~3.1.1",
+    "angular": "1.5.0",
+    "angular-animate": "^1.4.8"
+  },
   "appPath": "app"
 }

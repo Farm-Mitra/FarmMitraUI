@@ -4,94 +4,13 @@
 			<h1 class="page-header">Farm Villages</h1>
 		</div>
 		<!-- /.col-lg-12 -->
-	</div>
-    <div class="row">
 		
-
-	<div ng-init="farmVillages = [
-		{name: 'Rice Cultivation', location:'Mandrem'},
-		{name: 'Tomato and chilly', location:'Mapusa'},
-		{name: 'Organic farm', location:'Vasco'},
-		{name: 'Farmer\'s paradise', location:'Delhi'},
-		{name: 'Delicious', location:'Verna'},
-		{name: 'Spice farm', location:'Sydney'}
-	]"></div>
-
-	<!--label>Search: <input ng-model="searchText"></label-->
-	<div class="input-group custom-search-form">
-        <input ng-model="searchText" type="text" class="form-control" placeholder="Search...">
-        <span class="input-group-btn">
-            <button class="btn btn-default" type="button">
-                <i class="fa fa-search"></i>
-            </button>
-        </span>
-    </div>
-	<!--table id="searchTextResults">
-	  <tr><th>Name</th><th>Location</th></tr>
-	  <tr ng-repeat="village in farmVillages | filter:searchText">
-		<td>{{village.name}}</td>
-		<td>{{village.location}}</td>
-	  </tr>
-	</table-->
-	</div>
-	<!-- /.row -->
-	<div class="row">
-	<br />
-	<div class="col-lg-3" ng-repeat="village in farmVillages | filter:searchText">
-		<div class="panel panel-primary">
-			<div class="panel-heading">
-				<div class="row">
-					<!--div class="col-xs-3">
-						<i class="fa fa-comments fa-5x"></i>
-					</div-->
-					<div class="col-xs-9">
-						<h3>{{village.name}}</h3>
-						<h5>{{village.location}}</h5>
-					</div>
-				</div>
-			</div>
-			<!--a ui-sref="">
-				<div class="panel-footer">
-					<span class="pull-left">View Details</span>
-					<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-					<div class="clearfix"></div>
-				</div>
-			</a-->
+		<div class="span12" ng-controller="DemoController">
+			<h4>The sliders</h4>
+			<p>You many 'pin' (and hide) either the minimum or maximum handle to prevent it from being modified, effectivly converting the slider into a single-value slider.</p>
+			<p>The value of the first slider is: <strong>{{demo7.valueA}}</strong>; the second slider is <strong>{{demo7.valueB}}</strong>.</p>
+			<div range-slider min="0" max="10000" model-max="demo7.valueA" pin-handle="min"></div>
+			<div range-slider min="0" max="10000" model-min="demo7.valueB" pin-handle="max"></div>
 		</div>
 	</div>
-	</div>
-	
-
-	<!--div ng-init="friends = [{name:'Rice Cultivation', phone:'555-1276'},
-							 {name:'Tomato and chilly', phone:'800-BIG-MARY'},
-							 {name:'Organic farm', phone:'555-4321'},
-							 {name:'Farmer\'s paradise', phone:'555-5678'},
-							 {name:'Julie', phone:'555-8765'},
-							 {name:'Juliette', phone:'555-5678'}]"></div>
-
-	<label>Search: <input ng-model="searchText"></label>
-	<table id="searchTextResults">
-	  <tr><th>Name</th><th>Phone</th></tr>
-	  <tr ng-repeat="friend in friends | filter:searchText">
-		<td>{{friend.name}}</td>
-		<td>{{friend.phone}}</td>
-	  </tr>
-	</table>
-	<hr>
-	<label>Any: <input ng-model="search.$"></label> <br>
-	<label>Name only <input ng-model="search.name"></label><br>
-	<label>Phone only <input ng-model="search.phone"></label><br>
-	<label>Equality <input type="checkbox" ng-model="strict"></label><br>
-	<table id="searchObjResults">
-	  <tr><th>Name</th><th>Phone</th></tr>
-	  <tr ng-repeat="friendObj in friends | filter:search:strict">
-		<td>{{friendObj.name}}</td>
-		<td>{{friendObj.phone}}</td>
-	  </tr>
-	</table-->
-
-
-
-
-	
 </div>
