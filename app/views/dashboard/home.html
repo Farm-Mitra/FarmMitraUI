@@ -6,37 +6,32 @@
         <!-- /.col-lg-12 -->
     </div>
     <!-- /.row -->
-    <div class="row">
+    <div class="row" ng-controller="allCountCntrl">
         
-        <stats number="6" comments="Farm Villages" colour="green" type="location-arrow" goto="dashboard.farmvillages"></stats>
-        <stats number="12" comments="Farmers" colour="green" type="user" goto="dashboard.farmers"></stats>
-        <stats number="18" comments="Farm" colour="green" type="leaf" goto="dashboard.farms"></stats>
-        <stats number="8" comments="Mitra" colour="green" type="support" goto="dashboard.devices"></stats>
+        <stats number="{{farmVillageCount}}" comments="Farm Villages" colour="green" type="location-arrow" goto="dashboard.farmvillages"></stats>
+        <stats number="{{farmersCount}}" comments="Farmers" colour="green" type="user" goto="dashboard.farmers"></stats>
+        <stats number="{{farmsCount}}" comments="Farm" colour="green" type="leaf" goto="dashboard.farms"></stats>
+        <stats number="{{devicesCount}}" comments="Mitra" colour="green" type="support" goto="dashboard.devices"></stats>
        
    
        
         <!--stats number="8" comments="Water Available" colour="green" type="support"></stats-->
         <div class="col-lg-3 col-md-6">
-                <div class="panel panel-primary">
-                        <div class="panel-heading">
+                <div class="circleStatsItem panel-green">
+                    <a ui-sref="dashboard.waterAvailable">    
+                    <div class="panel-heading">
                             <div class="row">
                                 
                                 <div class="col-xs-3">
                                     <i class="fa fa-support fa-5x"></i>
                                 </div>
                                 <div class="col-xs-9 text-right">
-                                    <div class="huge">110</div>
+                                    <div class="huge">{{waterCount.capacity}} L</div>
                                     <div>Water Available</div>
                                 </div>
                             </div>
-                        </div>
-                        <a data-toggle="modal" data-target="#myModal">
-                            <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
-                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
-                                <div class="clearfix"></div>
-                            </div>
-                        </a>
+                        </div></a>
+                     
                 </div>
         </div>
         

@@ -203,9 +203,9 @@ angular
         templateUrl:'views/devices.html',
         url:'/devices'
     })
-     .state('dashboard.watersource',{
-        templateUrl:'views/pages/watersource.html',
-        url:'/watersource'
+     .state('dashboard.waterAvailable',{
+        templateUrl:'views/waterCount.html',
+        url:'/waterAvailable'
     })
     
     
