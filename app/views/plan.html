@@ -5,7 +5,7 @@
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>
-	
+	<form ng-submit="submit($event)" id="myForm">
 	<div class="row text-center" ng-controller="ChartCtrl">
 		<div class="col-lg-8 center-block">
 			<div class="row">
@@ -13,14 +13,14 @@
 					<div class="checkbox">
                         {{farmCount}}
 						<label ng-repeat="crops in cropPlan.children" style="margin:10px">
-						<h4>	<input type="checkbox" value="{{crops.label}}" checked>{{crops.label}}</h4>
+							<input type="checkbox" value="{{crops.id}}" checked ng-click="change($event)">{{crops.label}}
 						</label>						
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-lg-1 col-sm-1 text-center">
-					<input id="ex4" type="text" data-slider-min="0" data-slider-max="500" data-slider-step="1" data-slider-value="-3" data-slider-orientation="vertical"/>
+					<input id="ex4" type="text" data-slider-min="0" data-slider-max='700' data-slider-step="1" data-slider-value="700" data-slider-orientation="vertical" />
 					<br /><br />
 					<label>Water</label>
 				</div>
@@ -28,7 +28,7 @@
 					 <pvtl-d3-treemap width="600" height="400" data="cropPlan" value="farmCount" ng-class="farmArea">
                         <div>
                             <div ng-if="!children">
-                                <span ng-class="label" class="label">{{label}}</span>
+                                <span ng-class="label" class="label">{{label}} - {{farmCount}}</span>
                             </div>
                         </div>
                     </pvtl-d3-treemap>
@@ -49,6 +49,7 @@
 			</div>
 		</div>
 	</div>
+	</form>
 </div>
 <script>
 $("#ex4").slider({

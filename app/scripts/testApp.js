@@ -1,7 +1,7 @@
 var testApp = angular.module('sbAdminApp');
 
 
-testApp.factory("demoFac", ['$http',function($http){  
+testApp.factory("demoFac", ['$http', '$stateParams',function($http, $stateParams){  
 	var obj = {};
 	
 	obj.fetchUserDetails = function(){   /*This just to demonstrate common usage of factories to serve $http responses, by returning the entire promise */
@@ -47,10 +47,11 @@ testApp.factory("demoFac", ['$http',function($http){
         //return $http.get('mockjson/userprofile.json');
 	}
      
-      obj.fetchFVPlan = function(){   /*This just to demonstrate common usage of factories to serve $http responses, by returning the entire promise */
-		
-          return $http({method : 'GET',url : 'http://10.244.25.36:8080/farmmitra/rest/crop/plan?farm_village_id=13&water_usage=400'});
-        
+      obj.fetchFVPlan = function(argt){   /*This just to demonstrate common usage of factories to serve $http responses, by returning the entire promise */
+	  
+		console.log(argt);
+         //return $http({method : 'GET',url : 'http://10.244.25.36:8080/farmmitra/rest/crop/plan?farm_village_id=13&water_usage=400'});
+         return $http({method : 'GET',url : 'http://10.244.25.36:8080/farmmitra/rest/crop/plan?farm_village_id='+$stateParams.id+'&water_usage='+$stateParams.water});
         //return $http.get('mockjson/userprofile.json');
 	}
     

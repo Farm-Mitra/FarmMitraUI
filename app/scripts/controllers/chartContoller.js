@@ -7,7 +7,7 @@
  * Controller of the sbAdminApp
  */
 angular.module('sbAdminApp')
-  .controller('ChartCtrl', ['$scope', '$timeout','demoFac', function ($scope, $timeout,demoFac) {
+  .controller('ChartCtrl', ['$scope', '$timeout','demoFac', '$stateParams', function ($scope, $timeout,demoFac, $stateParams) {
     $scope.line = {
 	    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
 	    series: ['Series A', 'Series B'],
@@ -66,22 +66,35 @@ angular.module('sbAdminApp')
     	    'Pie' : 'PolarArea';
 		}
     };
-    demoFac.fetchFVPlan().success(function(data){
+	
+	$scope.change = function($event) {
+		//$timeout(function() {
+
+			  console.log($scope.form);
+
+			//angular.element($event.target.form).triggerHandler('submit');
+		//});
+	};
+	
+    demoFac.fetchFVPlan("test").success(function(data){
         console.log(data);
         var price  = data[0];
         var priceLen = price.length;
-        var counts = {}
+        var counts = {};
+		var idArr = [];
         for(var i= 0;i<priceLen;i++){
             if(counts[price[i].name] == undefined){
                 counts[price[i].name] = 1;
+				idArr[price[i].name] = price[i].id;
             } else {
                 counts[price[i].name]++;
             }
         }
         var children = [];
         for(var k in counts){
-            children.push({label:k,farmCount:counts[k]});  
+            children.push({label:k,farmCount:counts[k],cropid:idArr[k]});  
         }
-        $scope.cropPlan = {label:'farmVillage','children':children};        
+        $scope.cropPlan = {label:'farmVillage','children':children};     
+		$scope.water = parseInt($stateParams.water);
     });
 }]);
