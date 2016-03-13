@@ -209,18 +209,46 @@ angular
         templateUrl:'views/waterCount.html',
         url:'/waterAvailable'
     })
+    .state('dashboard.farmControl',{
+        templateUrl:'views/farmcontrol.html',
+        url:'/farControl'
+    })
     
     
 
   }])
 
-    .controller('FarmsCtrl',function($scope,demoFac){
+    .controller('FarmsCtrl',function($scope,demoFac,$state){
           demoFac.fetchfarmforFVDetails().success(function(data){
               console.log(data);
               $scope.farmDetails = {
                     'name':'farmvillage',
                     children : data
               }
+              
+              $scope.showControls = function(id){
+                  $state.go('dashboard.farmControl');
+              }
+       
+               var socket = io.connect('http://localhost:3000/');
+                socket.on('connect',function(data){
+                    console.log(data);
+                })
+              socket.on('soilmoist', function(msg){
+                  console.log('soilmoist'+msg);
+                $scope.soilmoist = msg;
+                  $scope.$apply();
+              });
+              socket.on('temperature', function(msg){
+                  console.log('temp'+msg);
+                $scope.temperature = msg;
+                  $scope.$apply();
+              });
+              socket.on('humidity', function(msg){
+                  console.log('humidity'+msg);
+                $scope.humidity = msg;
+                  $scope.$apply();
+              });
           })
       });
 

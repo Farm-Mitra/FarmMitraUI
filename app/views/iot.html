@@ -5,15 +5,33 @@
 		</div>
 		<!-- /.col-lg-12 -->
 	</div>
+    <style>
+        .active-5{
+            background: #ff0000;
+        }
+        .indicator {
+            border: none;
+        }
+    </style>
     <div class="row">
 		
-
-        
-	 <pvtl-d3-treemap width="800" height="600" data="farmDetails" value="farmArea" ng-class="farmArea">
+        <div style="margin:0 auto">
+	 <pvtl-d3-treemap width="800" height="600" data="farmDetails" value="farmArea" ng-class="farmArea" ng-click="showControls()">
             <div>
                 <div ng-if="!children">
-                    <span ng-class="farmArea" class="area">{{farmArea*100}}</span>
+                    <button val="{{id}}"  ng-click="setFarm()" class="{{'indicator active-'+id}}">&nbsp;</button>
+                    <span ng-class="farmArea" class="area" ></span>
                 </div>
             </div>
         </pvtl-d3-treemap>	
+        </div>
 </div>
+    <script>
+      var socket = io.connect('http://localhost:3000/');
+        socket.on('connect',function(data){
+            console.log(data);
+        })
+      socket.on('soilmoist', function(msg){
+        console.log(msg);
+      });    
+    </script>
