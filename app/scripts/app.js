@@ -99,7 +99,7 @@ angular
     })
 	.state('dashboard.plan',{
         templateUrl:'views/plan.html',
-        url:'/plan/:id',
+        url:'/plan/:id/:water',
         controller:'ChartCtrl',
         resolve: {
           loadMyFile:function($ocLazyLoad) {
